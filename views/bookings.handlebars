@@ -1,0 +1,56 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">    
+<nav class="navbar" style="border-radius:0%;border:none;background-color: black; color: white;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/home" style="box-shadow: none;color:white;"><h1>My Ride</h1></a>
+            </div>
+            <div class="link">
+                <a class="navbar-brand" href="/logout" style="box-shadow: none;color:white;">Logout</a>
+            
+
+            </div>
+            
+          
+        
+        </div>
+      </nav>
+    
+<h1 class="text-center">Bookings</h1>
+<div class="container">
+    
+    <table class="table table-striped mt-4">
+        <tr>
+            
+            
+            <th>Pick Up</th>
+            <th>Destination</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Mobile</th>
+            <th>Email</th>
+
+
+            
+            
+        </tr>
+        {{#each data}}
+        <tr>
+        
+            <td>{{this.pick_up}}</td>
+            <td>{{this.destination}}</td>
+            <td>{{this.date}}</td>
+            <td>{{this.time}}</td>
+            <td>{{this.first_name}}</td>
+            <td>{{this.last_name}}</td>
+            <td>{{this.mobile_no}}</td>
+            <td>{{this.email}}</td>
+          
+        </tr>
+        {{/each}}
+    </table>
+    {{!-- <p class="text-end">You are logged in as: 
+        <b>{{identity.first_name}} {{identity.last_name}}</b>
+    </p> --}}
+</div>

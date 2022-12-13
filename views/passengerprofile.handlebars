@@ -1,0 +1,64 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" 
+rel="stylesheet" crossorigin="anonymous">   
+
+<nav class="navbar" style="border-radius:0%;border:none;background-color: black; color: white;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/home" style="box-shadow: none;color:white;"><h1>My Ride</h1></a>
+            </div>
+            <div class="link">
+                <a class="navbar-brand" href="/userbooking" style="box-shadow: none;color:white;">Bookings</a>
+                <a class="navbar-brand" href="/cabselect" style="box-shadow: none;color:white;">Book</a>
+                <a class="navbar-brand" href="/logout" style="box-shadow: none;color:white;">Logout</a>
+            
+
+            </div>
+            
+          
+        
+        </div>
+      </nav>
+<h1 class="text-center">Passenger Profile</h1>
+<div class="container">
+    
+    <table class="table  mt-4">
+        {{#each data}}
+        <tr>
+            <th>Id</th>
+            <td>{{this.dataValues.user_id}}</td>
+        </tr>
+        <tr>
+            <th>First Name</th>
+             <td>{{this.dataValues.first_name}}</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>{{this.dataValues.last_name}}</td>
+
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>{{this.dataValues.email}}</td>
+        </tr>
+        <tr>
+            <th>Mobile Number</th>
+             <td>{{this.dataValues.mobile_no}}</td>
+        </tr>
+        <tr>
+            <th>Role</th>
+            <td>{{this.dataValues.role}}</td>
+        </tr> 
+         
+
+          </div>  
+         
+              
+        
+    </table>
+     <div class="options">
+            <button style="background-color:black;" onClick=location.href="/passengerupdate/{{this.dataValues.user_id}}" class="btn btn-primary">Update</button>
+            <button style="background-color:black;" onClick=location.href="/delete/{{this.dataValues.user_id}}" class="btn btn-primary">Delete</button>
+                
+        
+   {{/each}}
+</div>

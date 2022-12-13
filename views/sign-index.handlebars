@@ -1,0 +1,48 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">    
+<nav class="navbar" style="border-radius:0%;border:none;background-color: black; color: white;">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <a class="navbar-brand" href="/home" style="box-shadow: none;color:white;"><h1>My Ride</h1></a>
+            </div>
+            <div class="link">
+      
+                <a class="navbar-brand" href="/logout" style="box-shadow: none;color:white;">Logout</a>
+            
+
+            </div>
+        </div>
+      </nav>
+    
+<h1 class="text-center">Users</h1>
+<div class="container">
+    
+    <table class="table table-striped mt-4">
+        <tr>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Mobile Number</th>
+            <th>Role</th>
+            <th>Action</th>
+            
+        </tr>
+        {{#each data}}
+        <tr>
+            <td>{{this.dataValues.user_id}}</td>
+            <td>{{this.dataValues.first_name}}</td>
+            <td>{{this.dataValues.last_name}}</td>
+            <td>{{this.dataValues.email}}</td>
+            <td>{{this.dataValues.mobile_no}}</td>
+            <td>{{this.dataValues.role}}</td>
+            <td>
+               
+                <a href="/delete/{{this.dataValues.user_id}}" class="text-danger" onclick="return confirm('Are you sure you want to delete this')">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+    {{!-- <p class="text-end">You are logged in as: 
+        <b>{{identity.first_name}} {{identity.last_name}}</b>
+    </p> --}}
+</div>
